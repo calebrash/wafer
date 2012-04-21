@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="wafer.js"></script>
+	<script type="text/javascript">
+		// simple key-value storage
+		wafer.set('test', 'hello');
+		console.log(wafer.get('test'));
+
+		// JSON object storage
+		wafer.set('test2', {t1:'hello', t2:'hey', t3:{t3_1:'sup', t3_2:'yo'}});
+		console.log(wafer.get('test2'));
+
+		// raw JSON string
+		wafer.set('test3', '{"sp":"hola", "fr":["salut", "bonjour", "bienvenue"]}');
+		console.log(wafer.get('test3'));
+	</script>
+</head>
+<body></body>
+</html>
