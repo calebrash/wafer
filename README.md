@@ -18,9 +18,9 @@ var test_value = wafer.get('test'); // returns 'Some value'
 ###Removing values
 ```javascript
 wafer.set('key', 'value');
-var key = wafer.get('key', 'value'); // returns 'value'
+var key = wafer.get('key'); // returns 'value'
 wafer.remove('key');
-var key = wafer.get('key', 'value'); // returns undefined
+var key = wafer.get('key'); // returns undefined
 ```
 ###Storing JSON objects
 ```javascript
