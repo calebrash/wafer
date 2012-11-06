@@ -1,0 +1,8 @@
+{
+    "name": "--",
+    "description": "--",
+    "version": "2.0",
+    "dependencies": {
+        "grunt": "*"
+    }
+}

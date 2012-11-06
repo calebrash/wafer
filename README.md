@@ -3,7 +3,7 @@ Wafer.js is the world's thinnest cross-browser persistent storage solution. Wafe
 
 Note: Wafer relies on Douglas Crockford's JSON2 script to help with browsers that do not support native JSON parse and stringify functions: https://github.com/douglascrockford/JSON-js/blob/master/json2.js
 
-Version: 1.0
+Version: 2.0
 ##Usage
 Wafer works much in the same way as localStorage. However, Wafer improves upon native localStorage by adding JSON support, either in object form or raw JSON string.
 ###Simple key-value storage
@@ -31,3 +31,18 @@ var mytest = wafer.get('myobj').test; // returns 'hello'
 wafer.set('myobj', '{"test":"hello"}');
 var mytest = wafer.get('myobj').test; // returns 'hello'
 ```
+##Building Wafer
+If you want, you can build your own copy of Wafer from scratch. First, clone the repo:
+```
+git clone git://github.com/calebrash/wafer.git wafer && cd wafer
+```
+Install the dependencies:
+```
+npm install
+sudo npm install grunt -g
+```
+Build it:
+```
+grunt
+```
+Boom. There you go.
