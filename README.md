@@ -35,9 +35,10 @@ store.get().my_value; // returns 'my test object value'
 ```
 
 ##Building Wafer
-If you would like to extend or modify Wafer or sumbit pull requests or bugfixes or if you're otherwise awesome, you may find that you wish to rebuild Wafer on your own.
+If you would like to extend or modify Wafer or submit pull requests or bugfixes, or if you're otherwise awesome, you may find that you wish to rebuild Wafer on your own.
 
 ```bash
+# install Node, then...
 npm install grunt -g
 grunt
 ```
