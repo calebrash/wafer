@@ -1,11 +1,8 @@
-// wafer.js 1.0
-// Copyright (c) 2012 Caleb Rash
+// wafer.js 2.0
+// Copyright (c) 2013 Caleb Rash
 // Licensed under the MIT License
 
-// this script relies on json2.js for browsers in which native JSON support is lacking
-// https://github.com/douglascrockford/JSON-js/blob/master/json2.js
-
-/*global window: false, document: false, localStorage: false, escape: false, unescape: false */
+/*global window: false, document: false, localStorage: false, escape: false, unescape: false*/
 
 (function (win) {
     
@@ -13,7 +10,7 @@
 
     var _ls = null;
 
-    if(typeof localStorage == 'undefined') {
+    if(typeof localStorage === 'undefined') {
         _ls = {
             setItem: function(key, value, _e) {
                 var l = _e === true ? -1 : 30,
@@ -69,8 +66,8 @@
         get: function () {
             return _w.get(this.key);
         },
-        set: function () {
-            _w.set(this.key);
+        set: function (value) {
+            _w.set(this.key, value);
             return this;
         },
         remove: function () {

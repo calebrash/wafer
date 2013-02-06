@@ -1,48 +1,56 @@
-#Wafer
+# Wafer
 Wafer.js is the world's thinnest cross-browser persistent storage solution. Wafer allows you to store simple key-value pairs, as well as complex JSON objects and arrays and even raw JSON strings.
 
-Note: Wafer relies on Douglas Crockford's JSON2 script to help with browsers that do not support native JSON parse and stringify functions: https://github.com/douglascrockford/JSON-js/blob/master/json2.js
+Depending on your level of support for older browser, you may need [JSON2](https://github.com/douglascrockford/JSON-js/blob/master/json2.js) for JSON parsing.
 
-Version: 2.0
-##Usage
-Wafer works much in the same way as localStorage. However, Wafer improves upon native localStorage by adding JSON support, either in object form or raw JSON string.
-###Simple key-value storage
-```javascript
-wafer.set('key', 'value');
-var key = wafer.get('key'); // returns 'value'
+_Version: 2.0_
 
-wafer.set('test', 'Some value');
-var test_value = wafer.get('test'); // returns 'Some value'
-```
-###Removing values
+## Usage
+Starting with Version 2, the preferred method for using Wafer is by using the Wafer class.
+
+### Simple key-value storage
 ```javascript
-wafer.set('key', 'value');
-var key = wafer.get('key'); // returns 'value'
-wafer.remove('key');
-var key = wafer.get('key'); // returns undefined
+Wafer('mykey').set('my value');
 ```
-###Storing JSON objects
+
+### Removing values
+```javascript
+var store = new Wafer('mykey');
+store.set('my value');
+store.get(); // returns 'my value'
+store.remove();
+store.get(); // returns undefined
+```
+
+### Storing JSON objects
 ```javascript
 // JSON-style object
-wafer.set('myobj', {test: 'hello'});
-var mytest = wafer.get('myobj').test; // returns 'hello'
+var store = new Wafer('myobj');
+store.set({ my_value: 'my test object value'});
+store.get().test; // returns 'my test object value'
 
 // JSON string
-wafer.set('myobj', '{"test":"hello"}');
-var mytest = wafer.get('myobj').test; // returns 'hello'
+store.set('{ "my_value": "my test object value"}');
+store.get().test; // returns 'my test object value'
 ```
+
 ##Building Wafer
-If you want, you can build your own copy of Wafer from scratch. First, clone the repo:
-```
-git clone git://github.com/calebrash/wafer.git wafer && cd wafer
-```
-Install the dependencies:
-```
-npm install
-sudo npm install grunt -g
-```
-Build it:
-```
+If you would like to extend or modify Wafer or sumbit pull requests or bugfixes or if you're otherwise awesome, you may find that you wish to rebuild Wafer on your own.
+
+```bash
+npm install grunt -g
 grunt
 ```
-Boom. There you go.
+
+To run individual tasks:
+
+```bash
+# lint
+grunt lint
+
+# tests
+grunt qunit
+
+# minify
+grunt min
+```
