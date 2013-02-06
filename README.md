@@ -6,7 +6,7 @@ Depending on your level of support for older browser, you may need [JSON2](https
 _Version: 2.0_
 
 ## Usage
-Starting with Version 2, the preferred method for using Wafer is by using the Wafer class.
+Starting with Version 2, the preferred method for using Wafer is by using the Wafer class. For the Version 1 reference, see [V1.md][V1.md]
 
 ### Simple key-value storage
 ```javascript
@@ -27,11 +27,11 @@ store.get(); // returns undefined
 // JSON-style object
 var store = new Wafer('myobj');
 store.set({ my_value: 'my test object value'});
-store.get().test; // returns 'my test object value'
+store.get().my_value; // returns 'my test object value'
 
 // JSON string
 store.set('{ "my_value": "my test object value"}');
-store.get().test; // returns 'my test object value'
+store.get().my_value; // returns 'my test object value'
 ```
 
 ##Building Wafer
