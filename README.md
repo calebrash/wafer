@@ -6,7 +6,7 @@ Depending on your level of support for older browser, you may need [JSON2](https
 _Version: 2.0_
 
 ## Usage
-Starting with Version 2, the preferred method for using Wafer is by using the Wafer class. For the Version 1 reference, see [V1.md][V1.md]
+Starting with Version 2, the preferred method for using Wafer is by using the Wafer class. For the Version 1 reference, see [V1.md](V1.md)
 
 ### Simple key-value storage
 ```javascript
