@@ -1,6 +1,6 @@
 {
-    "name": "--",
-    "description": "--",
+    "name": "wafer",
+    "description": "cross-browser enhanced persistent local storage",
     "version": "2.0",
     "dependencies": {
         "grunt": "*"
