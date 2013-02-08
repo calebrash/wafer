@@ -1,7 +1,7 @@
 # Wafer
 Wafer.js is the world's thinnest cross-browser persistent storage solution. Wafer allows you to store simple key-value pairs, as well as complex JSON objects and arrays and even raw JSON strings.
 
-Depending on your level of support for older browser, you may need [JSON2](https://github.com/douglascrockford/JSON-js/blob/master/json2.js) for JSON parsing.
+Depending on your level of support for older browsers, you may need [JSON2](https://github.com/douglascrockford/JSON-js/blob/master/json2.js) for JSON parsing.
 
 _Version: 2.0_
 
@@ -11,6 +11,7 @@ Starting with Version 2, the preferred method for using Wafer is by using the Wa
 ### Simple key-value storage
 ```javascript
 Wafer('mykey').set('my value');
+Wafer('mykey').get(); // 'my value'
 ```
 
 ### Removing values
@@ -34,7 +35,7 @@ store.set('{ "my_value": "my test object value"}');
 store.get().my_value; // returns 'my test object value'
 ```
 
-##Building Wafer
+## Building Wafer
 If you would like to extend or modify Wafer or submit pull requests or bugfixes, or if you're otherwise awesome, you may find that you wish to rebuild Wafer on your own.
 
 ```bash
