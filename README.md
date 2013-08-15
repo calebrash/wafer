@@ -3,13 +3,18 @@ Wafer.js is the world's thinnest cross-browser persistent storage solution. Wafe
 
 Depending on your level of support for older browsers, you may need [JSON2](https://github.com/douglascrockford/JSON-js/blob/master/json2.js) for JSON parsing.
 
-_Version: 2.0_
+_Version: 3.0_
 
 ## Usage
-Starting with Version 2, the preferred method for using Wafer is by using the Wafer class. For the Version 1 reference, see [V1.md](V1.md)
 
 ### Simple key-value storage
 ```javascript
+// javascript
+Wafer('mykey').set('my value');
+Wafer('mykey').get(); // 'my value'
+```
+```coffeescript
+// coffeescript
 Wafer('mykey').set('my value');
 Wafer('mykey').get(); // 'my value'
 ```

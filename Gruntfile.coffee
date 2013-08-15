@@ -10,6 +10,7 @@ module.exports = (grunt) ->
           bare: true
         files:
           "wafer.js": "wafer.coffee"
+          "test/test.js": "test/test.coffee"
 
     uglify:
       default:
@@ -21,8 +22,11 @@ module.exports = (grunt) ->
     
     watch:
       default:
+        files: ["wafer.coffee", "test/test.coffee"]
+        tasks: ["coffee"],
+      all:
         files: "wafer.coffee"
-        tasks: ["coffee"]
+        tasks: ["coffee", "qunit", "uglify"]
 
 
   grunt.initConfig config
