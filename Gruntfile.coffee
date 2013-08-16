@@ -9,23 +9,23 @@ module.exports = (grunt) ->
         options:
           bare: true
         files:
-          "wafer.js": "wafer.coffee"
+          "dist/wafer.js": "src/wafer.coffee"
           "test/test.js": "test/test.coffee"
 
     uglify:
       default:
         files:
-          "wafer.min.js": "wafer.js"
+          "dist/wafer.min.js": "dist/wafer.js"
     
     qunit:
       default: "test/*.html"
     
     watch:
       default:
-        files: ["wafer.coffee", "test/test.coffee"]
+        files: ["src/wafer.coffee", "test/test.coffee"]
         tasks: ["coffee"],
       all:
-        files: "wafer.coffee"
+        files: "src/wafer.coffee"
         tasks: ["coffee", "qunit", "uglify"]
 
 
