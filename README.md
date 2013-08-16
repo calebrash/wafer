@@ -1,6 +1,6 @@
 # Wafer
 
-Wafer.js is a super-simple, lightweight, cross-browser persistent storage solution. Wafer allows you to store simple key-value pairs, as well as complex JSON objects and arrays and even raw JSON strings.
+Wafer.js is a super-simple, lightweight, cross-browser persistent storage solution. Wafer allows you to store simple key-value pairs, as well as complex JSON objects and arrays and even raw JSON strings. _As of 3.0.0, Wafer is now developed in CoffeeScript. Yay!_
 
 Depending on your level of support for older browsers, you may need [JSON2](https://github.com/douglascrockford/JSON-js/blob/master/json2.js) for JSON parsing.
 
