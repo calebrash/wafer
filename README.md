@@ -11,6 +11,8 @@ _Version: 3.0.0_
 
 ### Simple key-value storage
 
+Get and set simple persistent strings.
+
 ```javascript
 // javascript
 Wafer("mykey").set("my value");
@@ -24,6 +26,8 @@ Wafer("mykey").get() # my value
 
 
 ### Removing values
+
+Remove values that are no longer needed.
 
 ```javascript
 // javascript
@@ -45,6 +49,8 @@ store.get() # returns undefined
 
 ### Storing JSON objects
 
+Store an entire object in a single key.
+
 ```javascript
 // javascript
 var store = new Wafer("myobj");
@@ -63,4 +69,40 @@ store.get().my_value # my test object value
 store.set '{ "my_value": "my test object value"}'
 store.get().my_value # my test object value
 ```
+
+
+### Real-world examples
+
+#### Saving states for front-end actions
+
+```javascript
+// javascript:
+// a button that hides after being clicked
+// and stays hidden after a page refresh
+var button_state = new Wafer('my-stateful-button-key'),
+	$button = $('.my-button');
+if(button_state.get() !== 'hidden') {
+    $button.on('click', function () {
+        button_state.set('hidden');
+        $(this).hide();
+    });
+} else {
+	$button.hide();
+}
+```
+
+#### User data
+```coffeescript
+# coffeescript:
+# save form input after a refresh
+text_store = new Wafer "textarea-content"
+$textarea = $ "textarea"
+
+$textarea.val text_store.get() or ""
+$textarea.on "keydown", (evt) ->
+    evt.preventDefault()
+    text_store.set $textarea.val()
+
+$("form").on "submit", (evt) ->
+    text_store.set ""
 
