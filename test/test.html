@@ -3,85 +3,8 @@
 <head>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/qunit/qunit-1.11.0.js"></script>
-    <script src="../wafer.js"></script>
-    <script>
-
-        var common_key = 'test__wafer',
-            common_message = 'test message',
-            common_obj = {
-                num: 999,
-                msg: common_message,
-                obj: {
-                    num: 888
-                }
-            };
-
-        test('Wafer objects exists', function () {
-            ok(typeof wafer == 'object',   'Legacy wafer exists');
-            ok(typeof Wafer == 'function', 'v2 Wafer exists');
-        });
-
-        test('Legacy: Simple string storage', function () {
-            wafer.set(common_key, common_message);
-            equal(wafer.get(common_key), common_message);
-            wafer.remove(common_key);
-            equal(wafer.get(common_key), null);
-        });
-
-        test('v2: Simple string storage', function () {
-            var w = new Wafer(common_key);
-            w.set(common_message);
-            equal(w.get(), common_message);
-            w.remove();
-            equal(w.get(), null);
-        });
-
-        test('v2: Simple string storage, chained', function () {
-            Wafer(common_key).set(common_message);
-            equal(Wafer(common_key).get(), common_message);
-            Wafer(common_key).remove();
-            equal(Wafer(common_key).get(), null);
-        });
-
-        test('Legacy: Object storage', function () {
-            wafer.set(common_key, common_obj);
-            equal(wafer.get(common_key).num, common_obj.num);
-            equal(wafer.get(common_key).msg, common_obj.msg);
-            equal(wafer.get(common_key).obj.num, common_obj.obj.num);
-            wafer.remove(common_key);
-            equal(wafer.get(common_key), null);
-        });
-
-        test('v2: Object storage', function () {
-            var w = new Wafer(common_key);
-            w.set(common_obj);
-            equal(w.get().num, common_obj.num);
-            equal(w.get().msg, common_obj.msg);
-            equal(w.get().obj.num, common_obj.obj.num);
-            w.remove();
-            equal(w.get(), null);
-        });
-
-        test('Legacy: JSON storage', function () {
-            wafer.set(common_key, JSON.stringify(common_obj));
-            equal(wafer.get(common_key).num, common_obj.num);
-            equal(wafer.get(common_key).msg, common_obj.msg);
-            equal(wafer.get(common_key).obj.num, common_obj.obj.num);
-            wafer.remove(common_key);
-            equal(wafer.get(common_key), null);
-        });
-
-        test('v2: JSON storage', function () {
-            var w = new Wafer(common_key);
-            w.set(JSON.stringify(common_obj));
-            equal(w.get().num, common_obj.num);
-            equal(w.get().msg, common_obj.msg);
-            equal(w.get().obj.num, common_obj.obj.num);
-            w.remove();
-            equal(w.get(), null);
-        });
-
-    </script>
+    <script src="../dist/wafer.js"></script>
+    <script src="test.js"></script>
 </head>
 <body>
 </body>
